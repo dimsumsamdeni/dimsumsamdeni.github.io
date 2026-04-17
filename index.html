@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heard Social Ltd | Stand Out. Be Heard.</title>
+    
+    <link rel="icon" type="image/png" href="https://img.icons8.com/ios-filled/50/a29bfe/megaphone.png">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Syncopate:wght@700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <style>
+        :root {
+            --bg: #050505;
+            --primary: #a29bfe; /* Electric Purple */
+            --accent: #00cec9;  /* Cyan */
+            --white: #ffffff;
+            --text-dim: #a0a0a0;
+            --glass: rgba(255, 255, 255, 0.03);
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 30px;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            height: 100px;
+            display: flex;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            background: rgba(5, 5, 5, 0.8);
+            backdrop-filter: blur(20px);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.2rem;
+            letter-spacing: 2px;
+            text-decoration: none;
+            color: var(--white);
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 40px; }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, rgba(162, 155, 254, 0.15), transparent),
+                        radial-gradient(circle at 20% 80%, rgba(0, 206, 201, 0.1), transparent);
+        }
+
+        .hero-content { max-width: 800px; }
+
+        .hero h1 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 5rem;
+            line-height: 1;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .btn-main {
+            padding: 20px 45px;
+            background: var(--white);
+            color: var(--bg);
+            text-decoration: none;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            border-radius: 2px;
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(162, 155, 254, 0.3);
+        }
+
+        /* --- Services --- */
+        .services { padding: 150px 0; }
+        .section-tag { color: var(--primary); font-weight: 700; text-transform: uppercase; letter-spacing: 5px; font-size: 0.8rem; margin-bottom: 20px; display: block; }
+        .section-title { font-family: 'Syncopate', sans-serif; font-size: 2.5rem; margin-bottom: 80px; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2px; /* For grid line effect */
+            background: rgba(255,255,255,0.1);
+        }
+
+        .card {
+            background: var(--bg);
+            padding: 60px;
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            background: var(--glass);
+        }
+
+        .card i { font-size: 2rem; color: var(--primary); margin-bottom: 30px; }
+        .card h3 { font-size: 1.5rem; margin-bottom: 20px; }
+        .card p { color: var(--text-dim); font-size: 0.95rem; }
+
+        /* --- Image Showcase --- */
+        .showcase { padding-bottom: 150px; }
+        .showcase img {
+            width: 100%;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 0;
+            filter: grayscale(100%);
+            transition: var(--transition);
+        }
+        .showcase img:hover { filter: grayscale(0%); }
+
+        /* --- Footer --- */
+        footer {
+            padding: 100px 0 50px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 50px;
+        }
+
+        .footer-brand h3 { font-family: 'Syncopate', sans-serif; margin-bottom: 20px; }
+        .footer-brand p { color: var(--text-dim); max-width: 300px; }
+
+        .footer-contact h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); margin-bottom: 20px; }
+        .footer-contact p { font-size: 1rem; margin-bottom: 10px; }
+
+        .copyright {
+            margin-top: 100px;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #444;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 3rem; }
+            .nav-links { display: none; }
+            .footer-flex { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <a href="#" class="logo">HEARD<span>SOCIAL</span></a>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Expertise</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <span class="section-tag">Digital Advertising Agency</span>
+                <h1>Stand Out.<br><span>Be Heard.</span></h1>
+                <p>Kami mengubah kebisingan digital menjadi percakapan yang bermakna. Agensi media sosial butik untuk brand yang ingin berdampak.</p>
+                <a href="#contact" class="btn-main">Work With Us</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="showcase">
+        <div class="container">
+            <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1600&q=80" alt="Social Media Strategy">
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <div class="container">
+            <span class="section-tag">What We Do</span>
+            <h2 class="section-title">Expertise</h2>
+            
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-bullhorn"></i>
+                    <h3>Social Strategy</h3>
+                    <p>Membangun cetak biru digital untuk pertumbuhan brand Anda di platform media sosial utama.</p>
+                </div>
+                <div class="card">
+                    <h3>Content Creation</h3>
+                    <p>Produksi visual dan narasi yang dirancang untuk menghentikan guliran jari (scroll-stopping content).</p>
+                </div>
+                <div class="card">
+                    <h3>Paid Advertising</h3>
+                    <p>Kampanye iklan berbayar yang presisi untuk menjangkau audiens yang tepat di waktu yang tepat.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-brand">
+                    <h3>HEARD SOCIAL</h3>
+                    <p>Elevating brands in the digital age through creative social strategy.</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Registered Office</h4>
+                    <p>Coach House Old Surrey Hall</p>
+                    <p>Hollow Lane, East Grinstead</p>
+                    <p>RH19 3PR, United Kingdom</p>
+                </div>
+                <div class="footer-contact">
+                    <h4>Say Hello</h4>
+                    <p>hello@heardsocial.co.uk</p>
+                    <p>@heardsocial</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                &copy; 2026 HEARD SOCIAL LTD. REGISTERED IN ENGLAND & WALES. COMPANY NO. 14XXXXXX.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
